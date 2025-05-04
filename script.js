@@ -81,8 +81,14 @@ document.querySelectorAll('.menu-panel li').forEach(item => {
   });
 });
 
-document.getElementById('shopButton')
-  .addEventListener('click', () => {
-    window.location.href = 'tienda.html';
-  });
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('shopButton')
+    .addEventListener('click', () => {
+      window.location.href = 'tienda.html';
+    });
 
+  document.getElementById('homeButton')
+    .addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+});

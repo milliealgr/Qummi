@@ -123,3 +123,15 @@
     pointer-events: auto;
   }
   
+  .home-button {
+    position: absolute;
+    top: 22px;
+    left: 85px;
+    width: 115px;
+    height: 45px;
+    background-image: url('assets/ui/home.png');
+    background-size: cover;
+    cursor: pointer;
+    z-index: 5;
+    pointer-events: auto;
+  }
