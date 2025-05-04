@@ -1,148 +1,159 @@
+/* 1) Asegura que html y body cubran toda la ventana */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* -------------------------------
+   Método 1: fondo de página con imagen
+   ------------------------------- */
+body {
+  background: url('assets/backgrounds/page-background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* Contenedor principal: agrupa el canvas y la UI */
 .game-container {
-    position: relative;
-    width: 800px;
-    height: 600px;
-    margin: 0 auto;
-  }
-  
-  /* Canvas: se dibuja el escenario y el sprite */
-  #gameCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 2px solid #333;
-    background: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Capa de la interfaz (UI) que se superpone al canvas */
-  .ui-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 800px;
-    height: 600px;
-    pointer-events: none; /* Los clics pasan al canvas, salvo en los elementos que se sobreescriban */
-  }
-  
-  /* Título centrado en la parte superior */
-  .ui-title {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    font-weight: bold;
-    color: #4a4a4a;
-    pointer-events: auto;
-  }
-  
-  /* Icono de menú desplegable en la parte superior izquierda */
-  .menu-icon {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 32px;
-    height: 32px;
-    background-image: url('assets/ui/menu_icon.png'); /* Ruta a tu icono */
-    background-size: cover;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-  
-  /* Rueda azul en la esquina inferior izquierda, más grande y reposicionada */
-  .blue-wheel {
-    position: absolute;
-    bottom: 10px;
-    left: 100px;  /* Se mueve más a la derecha para no solapar la flecha izquierda */
-    width: 150px; /* Tamaño aumentado; ajústalo según necesites */
-    z-index: 1;   /* Se sitúa detrás de los botones */
-    pointer-events: auto;
-  }
-  
-  /* Botones de navegación (flechas) */
-  /* Botones de navegación (flechas) */
-  .nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 70px;
-    height: 70px;
-    
-    /* fondo transparente + posición y tamaño de la imagen */
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    border: none;
-    padding: 0;
-    text-indent: -9999px;   /* oculta el texto */
-    cursor: pointer;
-    z-index: 3;
-  }
+  position: relative;
+  width: 800px;
+  height: 600px;
+  margin: 45px auto;
+}
 
-  .nav-button.left {
-    left: 10px;
-    background-image: url('assets/ui/arrow-left.png');
-  }
+/* Canvas: se dibuja el escenario y el sprite */
+#gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 2px solid #333;
+  /* background: #fff;  <-- comentado para hacerlo transparente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-  .nav-button.right {
-    right: 10px;
-    background-image: url('assets/ui/arrow-right.png');
-  }
-  
-  
-  /* Menú desplegable: inicialmente oculto */
-  .menu-panel {
-    position: absolute;
-    top: 50px;
-    left: 10px;
-    width: 150px;
-    background: white;
-    border: 2px solid #ccc;
-    display: none;
-    pointer-events: auto;
-  }
-  
-  .menu-panel ul {
-    list-style: none;
-    margin: 0;
-    padding: 5px;
-  }
-  
-  .menu-panel li {
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  .menu-panel li:hover {
-    background: #f0f0f0;
-  }
-  
-  .shop-icon {
-    position: absolute;
-    top: 15px;
-    left: 15px;               /* ajusta separación del menú */
-    width: 60px;
-    height: 60px;
-    background-image: url('assets/ui/coin.png');
-    background-size: cover;
-    cursor: pointer;
-    z-index: 5;
-    pointer-events: auto;
-  }
-  
-  .home-button {
-    position: absolute;
-    top: 22px;
-    left: 85px;
-    width: 115px;
-    height: 45px;
-    background-image: url('assets/ui/home.png');
-    background-size: cover;
-    cursor: pointer;
-    z-index: 5;
-    pointer-events: auto;
-  }
+/* Capa de la interfaz (UI) que se superpone al canvas */
+.ui-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 800px;
+  height: 600px;
+  pointer-events: none;
+}
+
+/* Título centrado en la parte superior */
+.ui-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #4a4a4a;
+  pointer-events: auto;
+}
+
+/* Icono de menú desplegable en la parte superior izquierda */
+.menu-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  background-image: url('assets/ui/menu_icon.png');
+  background-size: cover;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Rueda azul en la esquina inferior izquierda */
+.blue-wheel {
+  position: absolute;
+  bottom: 10px;
+  left: 100px;
+  width: 150px;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* Botones de navegación (flechas) */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  padding: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.nav-button.left {
+  left: 10px;
+  background-image: url('assets/ui/arrow-left.png');
+}
+
+.nav-button.right {
+  right: 10px;
+  background-image: url('assets/ui/arrow-right.png');
+}
+
+/* Menú desplegable */
+.menu-panel {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  width: 150px;
+  background: white;
+  border: 2px solid #ccc;
+  display: none;
+  pointer-events: auto;
+}
+
+.menu-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+.menu-panel li {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.menu-panel li:hover {
+  background: #f0f0f0;
+}
+
+/* Botón Tienda */
+.shop-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 60px;
+  height: 60px;
+  background-image: url('assets/ui/coin.png');
+  background-size: cover;
+  cursor: pointer;
+  z-index: 5;
+  pointer-events: auto;
+}
+
+/* Botón Inicio */
+.home-button {
+  position: absolute;
+  top: 22px;
+  left: 85px;
+  width: 115px;
+  height: 45px;
+  background-image: url('assets/ui/home.png');
+  background-size: cover;
+  cursor: pointer;
+  z-index: 5;
+  pointer-events: auto;
+}
