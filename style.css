@@ -110,3 +110,16 @@
     background: #f0f0f0;
   }
   
+  .shop-icon {
+    position: absolute;
+    top: 10px;
+    left: 30px;               /* ajusta separación del menú */
+    width: 64px;
+    height: 64px;
+    background-image: url('assets/ui/coin.png');
+    background-size: cover;
+    cursor: pointer;
+    z-index: 5;
+    pointer-events: auto;
+  }
+  

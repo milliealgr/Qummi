@@ -80,3 +80,9 @@ document.querySelectorAll('.menu-panel li').forEach(item => {
     menuPanel.style.display = 'none';
   });
 });
+
+document.getElementById('shopButton')
+  .addEventListener('click', () => {
+    window.location.href = 'tienda.html';
+  });
+
