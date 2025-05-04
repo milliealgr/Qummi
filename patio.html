@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patio - Mi Amigo Virtual</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <!-- Canvas donde se dibuja el escenario y el sprite -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <!-- Capa de la interfaz superpuesta -->
+    <div class="ui-overlay">
+      <div class="ui-title">QUMMI</div>
+      <div class="menu-icon" id="menuButton"></div>
+      <img class="blue-wheel" src="assets/ui/blue_wheel.png" alt="Rueda azul">
+    </div>
+    
+    <!-- Botones de navegación (flechas) -->
+    <button class="nav-button left" id="navLeft">&#8592;</button>
+    <button class="nav-button right" id="navRight">&#8594;</button>
+    
+    <!-- Menú desplegable -->
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Configuración específica para el cuarto PATIO -->
+  <script>
+    const roomConfig = {
+      backgroundSrc: 'assets/backgrounds/patio.png',
+      spriteSrc: 'assets/sprites/bunny_patio.png',
+      scaleFactor: 0.5,
+      spriteX: 300,
+      spriteY: 300,
+      leftLink: 'index.html',   // Navegar a Cocina a la izquierda
+      rightLink: 'bathroom.html'
+    };
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
