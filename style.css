@@ -61,27 +61,38 @@
     pointer-events: auto;
   }
   
-  /* Botones de navegación (flechas) con mayor z-index para que queden encima */
+  /* Botones de navegación (flechas) */
+  /* Botones de navegación (flechas) */
   .nav-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 2rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 70px;
+    height: 70px;
+    
+    /* fondo transparente + posición y tamaño de la imagen */
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
     border: none;
-    padding: 10px;
+    padding: 0;
+    text-indent: -9999px;   /* oculta el texto */
     cursor: pointer;
-    z-index: 3;  /* Mayor que la blue wheel */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 3;
   }
-  
+
   .nav-button.left {
     left: 10px;
+    background-image: url('assets/ui/arrow-left.png');
   }
-  
+
   .nav-button.right {
     right: 10px;
+    background-image: url('assets/ui/arrow-right.png');
   }
+  
   
   /* Menú desplegable: inicialmente oculto */
   .menu-panel {
