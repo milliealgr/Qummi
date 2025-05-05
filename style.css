@@ -157,16 +157,18 @@ body {
   pointer-events: auto;
 }
 
-/* Botón “Volver al inicio” (solo en tienda.html) */
+
 .back-button {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 32px;
-  height: 32px;
-  background-image: url('assets/ui/back.png');  /* tu nuevo icono */
+  top: 15px;
+  left: 15px;
+  width: 80px;
+  height: 80px;
+  background-image: url('assets/ui/back.png');
   background-size: cover;
   cursor: pointer;
-  z-index: 5;
+
+  /* muy importante */
   pointer-events: auto;
+  z-index: 10;     /* por encima de todo canvas/overlay */
 }
