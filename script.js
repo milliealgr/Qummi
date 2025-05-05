@@ -77,6 +77,18 @@ window.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'index.html';
   });
 
+  // Botón para ir a la tienda de moneditas
+  const coinstoreBtn = document.getElementById('coinstoreButton');
+  if (coinstoreBtn) coinstoreBtn.addEventListener('click', () => {
+    window.location.href = 'tiendamonedas.html';
+  });
+
+  // Botón para volver a la tienda 
+  const backtostoreBtn = document.getElementById('backtostoreButton');
+  if (backtostoreBtn) backtostoreBtn.addEventListener('click', () => {
+    window.location.href = 'tienda.html';
+  });
+
   // Flechas de navegación
   const navLeft = document.getElementById('navLeft');
   if (navLeft && roomConfig.leftLink) navLeft.addEventListener('click', () => {

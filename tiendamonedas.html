@@ -10,15 +10,13 @@
   <div class="game-container">
     
     <!-- 1) Botón volver colocado antes del canvas -->
-    <div class="back-button" id="backButton"></div>
-    
+    <div class="backtostore-button" id="backtostoreButton"></div>
 
     <!-- 2) Canvas donde se dibuja el escenario y el sprite -->
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     
     <!-- 3) Capa de UI (ya sin botón volver) -->
     <div class="ui-overlay">
-        <div class="coinstore-button" id="coinstoreButton"></div>
       <!-- aquí irían otros íconos si los necesitas -->
     </div>
     
@@ -35,7 +33,7 @@
   
   <script>
     const roomConfig = {
-      backgroundSrc: 'assets/backgrounds/tienda.png',
+      backgroundSrc: 'assets/backgrounds/tiendamonedas.png',
       spriteSrc:     'assets/sprites/transparent.png',  // un PNG de 1×1 transparente
       scaleFactor:   1,      // tamaño real
       spriteX:       0,      // posición en el canvas
