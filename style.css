@@ -65,16 +65,15 @@ body {
   pointer-events: auto;
 }
 
-/* Rueda azul en la esquina inferior izquierda */
-.blue-wheel {
+/* Boton de dar amor*/
+.boton-amor {
   position: absolute;
-  bottom: 10px;
-  left: 100px;
-  width: 150px;
+  bottom: 20px;
+  left: 30px;
+  width: 70px;
   z-index: 1;
   pointer-events: auto;
 }
-
 /* Botones de navegación (flechas) */
 .nav-button {
   position: absolute;
