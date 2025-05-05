@@ -82,13 +82,27 @@ document.querySelectorAll('.menu-panel li').forEach(item => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('shopButton')
-    .addEventListener('click', () => {
+  // Tienda
+  const shopBtn = document.getElementById('shopButton');
+  if (shopBtn) {
+    shopBtn.addEventListener('click', () => {
       window.location.href = 'tienda.html';
     });
+  }
 
-  document.getElementById('homeButton')
-    .addEventListener('click', () => {
+  // Home (Index)
+  const homeBtn = document.getElementById('homeButton');
+  if (homeBtn) {
+    homeBtn.addEventListener('click', () => {
       window.location.href = 'index.html';
     });
+  }
+
+  // Back (solo en tienda.html)
+  const backBtn = document.getElementById('backButton');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      window.location.href = 'index.html';
+    });
+  }
 });

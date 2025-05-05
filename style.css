@@ -157,3 +157,17 @@ body {
   z-index: 5;
   pointer-events: auto;
 }
+
+/* Botón “Volver al inicio” (solo en tienda.html) */
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 32px;
+  height: 32px;
+  background-image: url('assets/ui/back.png');  /* tu nuevo icono */
+  background-size: cover;
+  cursor: pointer;
+  z-index: 5;
+  pointer-events: auto;
+}

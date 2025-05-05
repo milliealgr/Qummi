@@ -3,11 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda</title>
+  <title>Tienda - Qummi</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Bienvenido a la Tienda</h1>
-  <p>tienda</p>
+  <div class="game-container">
+    <!-- Canvas donde se dibuja el escenario y el sprite -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <!-- Capa de la interfaz superpuesta -->
+    <div class="ui-overlay">
+          <!-- Botón Volver al inicio -->
+        <div class="back-button" id="backButton" title="Inicio"></div>
+    </div>
+    
+    
+    <!-- Menú desplegable -->
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    const roomConfig = {
+      backgroundSrc: 'assets/backgrounds/tienda.png',
+      spriteSrc:     'assets/sprites/transparent.png',  // un PNG de 1×1 transparente
+      scaleFactor:   1,      // tamaño real
+      spriteX:       0,      // posición en el canvas
+      spriteY:       0,
+    };
+  </script>
+  <script src="script.js"></script>
+
 </body>
 </html>
