@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cuenta - Qummi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      background-color: #f4deda;
+    }
+
+    .container {
+      background-color: #e6f6fb;
+      max-width: 900px;
+      height: 600px;
+      margin: 50px auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border: 6px solid #97cbda;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 5px solid #97cbda;
+      border-radius: 20px;
+      margin-top: 20px;
+      margin-bottom: 60px;
+      background-image: url('fotoprueba.jpeg'); /* Cambia la ruta a tu imagen */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .info-item {
+      margin-bottom: 30px;
+      font-size: 30px;
+      color: #00334e;
+      text-align: center;
+    }
+
+    .info-item span {
+      font-weight: bold;
+      color: #308aa5;
+      margin-right: 10px;
+    }
+
+    .back-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #8ed0e3;
+  font-weight: bold;
+  background-color: #edf2f8;
+  border: 4px solid #97cbda;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.5s ease;
+}
+
+.back-button:hover {
+  background-color: #78b9c9;
+  color: white;
+  transform: rotate(360deg);
+  transition: color 0.3s, transform 0.5s ease;
+}
+
+
+    .edit-button {
+      margin-top: 30px;
+      background-color: #e6f6fb;
+      border: 4px solid #97cbda;
+      border-radius: 25px;
+      font-size: 25px;
+      padding: 10px 25px;
+      color: #00334e;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .edit-button:hover {
+      background-color: #78b9c9;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="back-button" onclick="history.back()">⟲</button>
+
+    <div class="profile-pic"></div>
+
+    <div class="info-item"><span>Nombre de usuario:</span> User1</div>
+    <div class="info-item"><span>Correo electrónico:</span> email@example.com</div>
+    <div class="info-item"><span>Mascota:</span> Qummi</div>
+
+    <!-- Botón Editar -->
+    <button class="edit-button">Editar</button>
+  </div>
+</body>
+</html>

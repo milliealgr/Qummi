@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soporte - Qummi</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      background-color: #f4deda;
+    }
+
+    .container {
+      background-color: #e6f6fb;
+      max-width: 900px;
+      margin: 50px auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      border: 6px solid #97cbda;
+      position: relative;
+    }
+
+    .support-title {
+      display: inline-block;
+      background-color: white;
+      color: #21618c;
+      padding: 10px 20px;
+      border: 4px solid #aed6f1;
+      border-radius: 30px;
+      font-size: 32px;
+      font-family: 'Arial Rounded MT Bold', sans-serif;
+      text-align: center;
+      margin: 0 auto 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .title-wrapper {
+      text-align: center;
+      margin-bottom: 2s0px;
+    }
+
+    .faq {
+      margin-bottom: 40px;
+    }
+
+    .faq-item {
+      margin-bottom: 30px;
+    }
+
+    .faq-item strong {
+        font-size: 20px;
+      color: #308aa5;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #97cbda;
+      border-radius: 12px;
+      resize: none;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .send-button {
+      background-color: #e6f6fb;
+      border: 4px solid #97cbda;
+      border-radius: 25px;
+      font-size: 20px;
+      padding: 10px;
+      color: #00334e;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 150px;
+      align-self: center;
+    }
+
+    .send-button:hover {
+      background-color: #78b9c9;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #8ed0e3;
+      background-color: #e6f6fb;
+      border: 4px solid #97cbda;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.5s ease;
+    }
+
+    .back-button:hover {
+      background-color: #78b9c9;
+      color: white;
+      transform: rotate(360deg);
+      transition: color 0.3s, transform 0.5s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="back-button" onclick="history.back()">⟲</button>
+
+    <div class="title-wrapper">
+      <h1 class="support-title">🛠 Soporte Técnico</h1>
+    </div>
+
+    <div class="faq">
+      <div class="faq-item"><strong>¿Cómo cambio mi mascota?</strong><br>Puedes hacerlo desde el menú de hamburguesa seleccionando el icono del gancho.</div>
+      <div class="faq-item"><strong>¿Cómo edito mis datos?</strong><br>Ve a la sección "Cuenta" desde el menú y haz clic en "Editar".</div>
+      <div class="faq-item"><strong>¿Qummi no responde?</strong><br>Cierra la app y vuelve a abrirla. Si persiste, repórtalo abajo.</div>
+      <div class="faq-item"><strong>¿Perdí mi progreso?</strong><br>Verifica tu conexión. Si no se recupera, contáctanos usando el formulario.</div>
+    </div>
+
+    <form>
+      <input type="text" placeholder="Tu nombre">
+      <input type="email" placeholder="Tu correo electrónico">
+      <textarea placeholder="Describe tu problema o duda..."></textarea>
+      <button type="submit" class="send-button">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>
