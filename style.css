@@ -29,6 +29,20 @@ body {
   /* background: #fff;  <-- comentado para hacerlo transparente */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+.sprite-corriendo {
+  position: absolute;
+  top: 390px;
+  left: 160px;
+  width: 450px;
+  height: auto;
+  z-index: 6;
+  pointer-events: none;
+  transform-origin: center;
+  transform: scaleX(1);
+}
+
+
+
 
 /* Capa de la interfaz (UI) que se superpone al canvas */
 .ui-overlay {

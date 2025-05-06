@@ -20,6 +20,33 @@ const bunny = {
   frameTimer:  0,
   frameDelay:  300
 };
+let sprite = document.getElementById('spriteCorriendo');
+let direccion = 1;
+let posX = 160;
+const velocidad = 2;
+const limiteIzq = 160;
+const limiteDer = 850;
+
+function moverSprite() {
+  posX += direccion * velocidad;
+  sprite.style.left = posX + 'px';
+
+  if (posX >= limiteDer && direccion === 1) {
+    direccion = -1;
+    sprite.style.transform = 'scaleX(-1)';
+  }
+
+  if (posX <= limiteIzq && direccion === -1) {
+    direccion = 1;
+    sprite.style.transform = 'scaleX(1)';
+  }
+
+  requestAnimationFrame(moverSprite);
+}
+
+moverSprite();
+
+
 
 let lastTime = 0;
 
