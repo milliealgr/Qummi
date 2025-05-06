@@ -1,10 +1,24 @@
 // Obtener el canvas y su contexto
 const canvas = document.getElementById('gameCanvas');
 const ctx    = canvas.getContext('2d');
+const amorBtn   = document.getElementById('amorButton');
+const chatBtn   = document.getElementById('chatButton');
+const juegoBtn  = document.getElementById('juegoButton');
+const comidaBtn = document.getElementById('comidaButton');
+
 
 // Cargar la imagen de fondo
 const backgroundImage = new Image();
-backgroundImage.src   = roomConfig.backgroundSrc;
+backgroundImage.src = roomConfig.backgroundSrc;
+
+backgroundImage.onload = () => {
+  console.log("Fondo cargado correctamente:", backgroundImage.src);
+  requestAnimationFrame(gameLoop);
+};
+
+backgroundImage.onerror = () => {
+  console.error("Error al cargar el fondo:", backgroundImage.src);
+};
 
 // Cargar la imagen del sprite
 const spriteImage = new Image();
@@ -20,25 +34,29 @@ const bunny = {
   frameTimer:  0,
   frameDelay:  300
 };
+
 let sprite = document.getElementById('spriteCorriendo');
+let spriteEnAnimacion = false
 let direccion = 1;
-let posX = 160;
+let posX = 11;
 const velocidad = 2;
-const limiteIzq = 160;
-const limiteDer = 850;
+const limiteIzq = 10;
+const limiteDer = 350;
 
 function moverSprite() {
-  posX += direccion * velocidad;
-  sprite.style.left = posX + 'px';
+  if (!spriteEnAnimacion) {
+    posX += direccion * velocidad;
+    sprite.style.left = posX + 'px';
 
-  if (posX >= limiteDer && direccion === 1) {
-    direccion = -1;
-    sprite.style.transform = 'scaleX(-1)';
-  }
+    if (posX >= limiteDer && direccion === 1) {
+      direccion = -1;
+      sprite.style.transform = 'scaleX(-1)';
+    }
 
-  if (posX <= limiteIzq && direccion === -1) {
-    direccion = 1;
-    sprite.style.transform = 'scaleX(1)';
+    if (posX <= limiteIzq && direccion === -1) {
+      direccion = 1;
+      sprite.style.transform = 'scaleX(1)';
+    }
   }
 
   requestAnimationFrame(moverSprite);
@@ -128,11 +146,91 @@ window.addEventListener('DOMContentLoaded', () => {
      window.location.href = 'chat.html';
    });
 
+
    // Botón Comida (en otras páginas)
    const comidaBtn = document.getElementById('comidaButton');
    if (comidaBtn) comidaBtn.addEventListener('click', () => {
      window.location.href = 'Comida.html';
    });   
+   // REACCIONES PERSONALIZADAS PARA QUMMI
+
+const spriteElement = document.getElementById("spriteCorriendo");
+const originalSprite = spriteElement ? spriteElement.src : 'assets/sprites/correr.gif';
+
+// Función auxiliar para cambiar la animación temporalmente
+function animarSpriteQummi(nuevaSrc) {
+  if (!spriteElement) return;
+
+  spriteEnAnimacion = true; // ⛔️ Detiene el movimiento
+  spriteElement.src = nuevaSrc;
+
+  setTimeout(() => {
+    spriteElement.src = originalSprite;
+    spriteEnAnimacion = false; // ✅ Reanuda el movimiento
+  }, 2000); 
+}
+
+function mostrarMensaje(texto) {
+  const mensaje = document.getElementById('mensajeFlotante');
+  const sprite = document.getElementById('spriteCorriendo');
+
+  if (!mensaje || !sprite) return;
+
+  // Obtener posición del sprite en pantalla
+  const spriteRect = sprite.getBoundingClientRect();
+
+  // Posicionar el mensaje justo arriba del sprite
+  mensaje.style.left = `${spriteRect.left + spriteRect.width / 2}px`;
+  mensaje.style.top = `${spriteRect.top - 40}px`; // 40px arriba del sprite
+
+  mensaje.textContent = texto;
+  mensaje.classList.add('mostrar');
+
+  // Ocultar después de 2s
+  setTimeout(() => {
+    mensaje.classList.remove('mostrar');
+  }, 2000);
+}
+
+
+
+// Botón Amor
+if (amorBtn) amorBtn.addEventListener('click', () => {
+  animarSpriteQummi('assets/sprites/amor.gif');
+  mostrarMensaje('¡Qummi recibió amor!');
+});
+
+// Botón Chat
+if (chatBtn) chatBtn.addEventListener('click', () => {
+  animarSpriteQummi('assets/sprites/chat.gif');
+  mostrarMensaje('¡Qummi está charlando!');
+});
+
+// Botón Juego
+if (juegoBtn) juegoBtn.addEventListener('click', () => {
+  animarSpriteQummi('assets/sprites/jugar.gif');
+  mostrarMensaje('¡Qummi está jugando!');
+});
+
+// Botón Comida
+if (comidaBtn) comidaBtn.addEventListener('click', () => {
+  animarSpriteQummi('assets/sprites/comer.gif');
+  mostrarMensaje('¡Qummi está comiendo!');
+});
+
+const animacionesAleatorias = [
+  { src: 'assets/sprites/salto.gif', texto: 'Qummi está feliz ' },
+  { src: 'assets/sprites/hola.gif', texto: 'Qummi se sentó a descansar...' },
+  { src: 'assets/sprites/hola.gif', texto: 'Qummi te saluda!' },
+];
+
+setInterval(() => {
+  if (!spriteEnAnimacion) {
+    const random = animacionesAleatorias[Math.floor(Math.random() * animacionesAleatorias.length)];
+    animarSpriteQummi(random.src);
+    mostrarMensaje(random.texto);
+  }
+}, 10000); 
 
   // Flechas de navegación
   const navLeft = document.getElementById('navLeft');
