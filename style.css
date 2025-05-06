@@ -140,6 +140,66 @@ button img {
   width: 73px;
 }
 
+/* Botón Tienda */
+.juegos-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 175px;
+  z-index: 1;
+  pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0;
+  background-image: url('assets/ui/BotonJuegos.png');
+  background-size: cover;
+  cursor: pointer;
+}
+
+.back-buttonJuegos {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80px;
+  height: 80px;
+  background-image: url('assets/ui/back.png');
+  background-size: cover;
+  cursor: pointer;
+
+  /* muy importante */
+  pointer-events: auto;
+  z-index: 10;     /* por encima de todo canvas/overlay */
+}
+
+.back-buttonChat{
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  width: 80px;
+  height: 80px;
+  background-image: url('assets/ui/back.png');
+  background-size: cover;
+  cursor: pointer;
+
+  /* muy importante */
+  pointer-events: auto;
+  z-index: 10;     /* por encima de todo canvas/overlay */
+}
+
+.back-buttonRefrigerador {
+  position: absolute;
+  top: 39px;
+  left: 685px;
+  width: 80px;
+  height: 80px;
+  background-image: url('assets/ui/back.png');
+  background-size: cover;
+  cursor: pointer;
+
+  /* muy importante */
+  pointer-events: auto;
+  z-index: 10;     /* por encima de todo canvas/overlay */
+}
+
 
 /* Botones de navegación (flechas) */
 .nav-button {

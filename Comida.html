@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comida - Qummi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    
+    <!-- 1) Botón volver colocado antes del canvas -->
+    <div class="back-buttonRefrigerador" id="backButton"></div>
+    
+
+    <!-- 2) Canvas donde se dibuja el escenario y el sprite -->
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <!-- 3) Capa de UI (ya sin botón volver) -->
+    <div class="ui-overlay">
+      <!-- aquí irían otros íconos si los necesitas -->
+    </div>
+    
+    
+    <!-- Menú desplegable -->
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li>Opción 1</li>
+        <li>Opción 2</li>
+        <li>Opción 3</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    const roomConfig = {
+      backgroundSrc: 'assets/backgrounds/Refrigerador.png',
+      spriteSrc:     'assets/sprites/transparent.png',  // un PNG de 1×1 transparente
+      scaleFactor:   1,      // tamaño real
+      spriteX:       0,      // posición en el canvas
+      spriteY:       0,
+    };
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

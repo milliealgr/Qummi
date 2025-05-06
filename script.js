@@ -89,6 +89,24 @@ window.addEventListener('DOMContentLoaded', () => {
     window.location.href = 'tienda.html';
   });
 
+   // Botón Juegos (en otras páginas)
+   const juegosBtn = document.getElementById('juegoButton');
+   if (juegosBtn) juegosBtn.addEventListener('click', () => {
+     window.location.href = 'juegos.html';
+   });
+
+   // Botón Chat (en otras páginas)
+   const chatBtn = document.getElementById('chatButton');
+   if (chatBtn) chatBtn.addEventListener('click', () => {
+     window.location.href = 'chat.html';
+   });
+
+   // Botón Comida (en otras páginas)
+   const comidaBtn = document.getElementById('comidaButton');
+   if (comidaBtn) comidaBtn.addEventListener('click', () => {
+     window.location.href = 'Comida.html';
+   });   
+
   // Flechas de navegación
   const navLeft = document.getElementById('navLeft');
   if (navLeft && roomConfig.leftLink) navLeft.addEventListener('click', () => {
