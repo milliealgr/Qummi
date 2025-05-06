@@ -160,8 +160,8 @@ body {
 
 .back-button {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 109px;
+  left: 140px;
   width: 80px;
   height: 80px;
   background-image: url('assets/ui/back.png');
@@ -200,10 +200,10 @@ body {
 
 .coinstore-button {
   position: absolute;
-  top: 15px;
-  left: 125px;
-  width: 80px;
-  height: 80px;
+  top: 115px;
+  left: 590px;
+  width: 65px;
+  height: 65px;
   background-image: url('assets/ui/coin.png');
   background-size: cover;
   cursor: pointer;
@@ -215,10 +215,10 @@ body {
 
 .backtostore-button {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 80px;
-  height: 80px;
+  top: 83px;
+  left: 100px;
+  width: 90px;
+  height: 90px;
   background-image: url('assets/ui/back.png');
   background-size: cover;
   cursor: pointer;
