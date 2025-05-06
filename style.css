@@ -70,9 +70,11 @@ body {
   position: absolute;
   bottom: 20px;
   left: 30px;
-  width: 70px;
   z-index: 1;
   pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* Boton de chat*/
@@ -80,9 +82,11 @@ body {
   position: absolute;
   bottom: 20px;
   left: 100px;
-  width: 75px;
   z-index: 1;
   pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* Boton de juegos*/
@@ -90,9 +94,11 @@ body {
   position: absolute;
   bottom: 20px;
   left: 175px;
-  width: 70px;
   z-index: 1;
   pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* Boton de dar comida*/
@@ -100,10 +106,40 @@ body {
   position: absolute;
   bottom: 20px;
   left: 245px;
-  width: 70px;
   z-index: 1;
   pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0;
 }
+/* Estilos generales para botones interactivos */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tamaños individuales por botón */
+.boton-amor {
+  width: 72px;
+}
+.boton-chat {
+  width: 77px;
+}
+.boton-juego {
+  width: 71px;
+}
+.boton-comida {
+  width: 73px;
+}
+
 
 /* Botones de navegación (flechas) */
 .nav-button {
