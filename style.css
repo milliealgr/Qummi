@@ -310,10 +310,12 @@ button img {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  z-index: 100;
+  z-index: 9999; /* Mantener en la capa superior */
   padding: 0;
   transition: transform 0.2s ease;
+  pointer-events: all; /* Aseguramos que los clics lleguen al botón */
 }
+
 
 .menu-circular-button img {
   width: 100%;
@@ -353,4 +355,29 @@ button img {
   /* muy importante */
   pointer-events: auto;
   z-index: 10;     /* por encima de todo canvas/overlay */
+}
+
+.vertical-menu {
+  position: absolute;
+  top: 90px; /* ajusta según el botón */
+  right: 20px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  z-index: 200;
+}
+
+/* Botones circulares dentro de la barra */
+.circle-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #eeeeee00;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.circle-btn:hover {
+  background-color: #ddd;
 }

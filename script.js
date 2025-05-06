@@ -129,4 +129,25 @@ window.addEventListener('DOMContentLoaded', () => {
       item.addEventListener('click', () => menuPanel.style.display = 'none');
     });
   }
+
+  const circularBtn = document.getElementById('circularMenuButton');
+const verticalMenu = document.getElementById('verticalMenu');
+
+if (circularBtn && verticalMenu) {
+  circularBtn.addEventListener('click', (e) => {
+    e.stopPropagation();  // Evita que el clic se propague y cierre el menú inmediatamente
+    const isVisible = verticalMenu.style.display === 'flex';
+    verticalMenu.style.display = isVisible ? 'none' : 'flex'; // Cambia la visibilidad del menú
+  });
+
+  // Evitar cierre al hacer clic dentro del menú
+  verticalMenu.addEventListener('click', (e) => {
+    e.stopPropagation(); // Previene el cierre si se hace clic dentro
+  });
+
+  // Cerrar el menú si se hace clic fuera
+  document.addEventListener('click', () => {
+    verticalMenu.style.display = 'none';
+  });
+}
 });
